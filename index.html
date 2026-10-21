@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Lewis's Tech Help | Home IT support in Dudley</title>
+<meta name="description" content="Home IT support across Dudley, Stourbridge and Halesowen. Wi‑Fi, laptops, phones, printers, PC upgrades and custom builds. Fixed prices, no call‑out fee.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#FFFFFF; --alt:#F5F7F9; --ink:#1B2430; --muted:#5A6472; --line:#E1E5EA;
+  --accent:#0F5C7A; --accent-ink:#FFFFFF; --accent-soft:#E6F0F4;
+  color-scheme: light;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#12171E; --alt:#181F28; --ink:#E7ECF2; --muted:#9AA6B4; --line:#2A3440;
+    --accent:#4FA3C4; --accent-ink:#0B1218; --accent-soft:#1B2B36;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"]{
+    --bg:#12171E; --alt:#181F28; --ink:#E7ECF2; --muted:#9AA6B4; --line:#2A3440;
+    --accent:#4FA3C4; --accent-ink:#0B1218; --accent-soft:#1B2B36;
+    color-scheme: dark;
+}
+:root{padding-top:env(safe-area-inset-top,0px); padding-bottom:env(safe-area-inset-bottom,0px)}
+*{box-sizing:border-box}
+html{font-size:106.25%; scroll-behavior:smooth}
+@media (prefers-reduced-motion: reduce){html{scroll-behavior:auto}}
+body{margin:0; background:var(--bg); color:var(--ink);
+  font-family:"IBM Plex Sans", "Segoe UI", Helvetica, Arial, sans-serif; line-height:1.6}
+a{color:inherit}
+.wrap{max-width:64rem; margin:0 auto; padding:0 1.5rem}
+h1,h2,h3{margin:0; line-height:1.2; font-weight:600}
+h2{font-size:1.65rem; margin-bottom:.5rem; letter-spacing:-.01em}
+.intro{color:var(--muted); margin:0 0 2rem; max-width:38rem}
+a:focus-visible, summary:focus-visible{outline:2px solid var(--accent); outline-offset:3px; border-radius:4px}
+
+/* Header */
+.top{border-bottom:1px solid var(--line)}
+.top .wrap{display:flex; align-items:center; gap:2rem; padding-top:1rem; padding-bottom:1rem}
+.name{font-weight:600; font-size:1.1rem; text-decoration:none; margin-right:auto}
+.nav{display:flex; gap:1.5rem; font-size:.95rem}
+.nav a{text-decoration:none; color:var(--muted)}
+.nav a:hover{color:var(--ink)}
+.top-phone{font-weight:600; text-decoration:none; color:var(--accent); white-space:nowrap}
+
+/* Buttons */
+.btn{display:inline-block; text-decoration:none; font-weight:500; padding:.75rem 1.25rem; border-radius:6px; border:1px solid var(--accent)}
+.btn-primary{background:var(--accent); color:var(--accent-ink)}
+.btn-secondary{color:var(--accent); background:transparent}
+.actions{display:flex; flex-wrap:wrap; gap:.75rem}
+
+/* Hero */
+.hero .wrap{display:grid; grid-template-columns:1.4fr 1fr; gap:3rem; align-items:start; padding-top:4rem; padding-bottom:4rem}
+.hero h1{font-size:clamp(2rem,5vw,2.9rem); letter-spacing:-.02em; margin-bottom:1rem}
+.hero p{font-size:1.15rem; color:var(--muted); margin:0 0 2rem; max-width:34rem}
+.facts{border:1px solid var(--line); border-radius:8px; margin:0; padding:.5rem 1.25rem}
+.facts div{display:flex; justify-content:space-between; gap:1rem; padding:.8rem 0; border-bottom:1px solid var(--line)}
+.facts div:last-child{border-bottom:0}
+.facts dt{color:var(--muted)}
+.facts dd{margin:0; font-weight:500; text-align:right}
+
+section{padding:4rem 0; border-top:1px solid var(--line)}
+section.alt{background:var(--alt)}
+
+/* Services */
+.services{display:grid; grid-template-columns:1fr 1fr; gap:0 3rem}
+.service{padding:1.1rem 0; border-top:1px solid var(--line)}
+.service h3{font-size:1.05rem; margin-bottom:.25rem}
+.service p{margin:0; color:var(--muted)}
+
+/* Prices */
+.price-cols{display:grid; grid-template-columns:1fr 1fr; gap:3rem}
+.price-cols h3{font-size:1rem; color:var(--muted); font-weight:500; margin-bottom:.25rem}
+table{width:100%; border-collapse:collapse}
+td{padding:.85rem 0; border-bottom:1px solid var(--line); vertical-align:top}
+td:last-child{text-align:right; font-weight:600; white-space:nowrap; padding-left:1rem}
+td small{display:block; color:var(--muted); font-size:.88rem}
+.terms{margin-top:2rem; padding:1rem 1.25rem; background:var(--accent-soft); border-radius:6px; max-width:44rem}
+.terms p{margin:0}
+
+/* Process: a real sequence */
+.steps{display:grid; grid-template-columns:repeat(4,1fr); gap:2rem; list-style:none; padding:0; margin:0; counter-reset:s}
+.steps li{counter-increment:s; border-top:2px solid var(--accent); padding-top:1rem}
+.steps li::before{content:"Step " counter(s); display:block; color:var(--accent); font-size:.9rem; font-weight:500; margin-bottom:.35rem}
+.steps h3{font-size:1.05rem; margin-bottom:.25rem}
+.steps p{margin:0; color:var(--muted)}
+
+/* About */
+.about{max-width:44rem}
+.about p{margin:0 0 1rem}
+
+/* FAQ */
+.faq{max-width:44rem}
+details{border-bottom:1px solid var(--line)}
+details:first-of-type{border-top:1px solid var(--line)}
+summary{cursor:pointer; font-weight:500; padding:1rem 0; list-style:none; display:flex; justify-content:space-between; gap:1rem}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+"; color:var(--muted)}
+details[open] summary::after{content:"−"}
+details p{margin:0 0 1rem; color:var(--muted)}
+
+/* Contact */
+.contact{display:grid; grid-template-columns:1.2fr 1fr; gap:3rem; align-items:start}
+.contact-list{margin:0}
+.contact-list div{padding:.9rem 0; border-bottom:1px solid var(--line)}
+.contact-list dt{color:var(--muted); font-size:.9rem}
+.contact-list dd{margin:0; font-weight:500; font-size:1.1rem}
+.contact-list a{text-decoration:none}
+footer{border-top:1px solid var(--line); color:var(--muted); font-size:.9rem}
+footer .wrap{padding-top:1.5rem; padding-bottom:2.5rem}
+
+@media (max-width:800px){
+  .nav{display:none}
+  .hero .wrap, .services, .price-cols, .contact{grid-template-columns:1fr}
+  .hero .wrap{padding-top:2.5rem; padding-bottom:2.5rem; gap:2rem}
+  .steps{grid-template-columns:1fr 1fr}
+  section{padding:3rem 0}
+}
+@media (max-width:480px){ .steps{grid-template-columns:1fr} }
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="wrap">
+    <a class="name" href="#">Lewis's Tech Help</a>
+    <nav class="nav" aria-label="Main">
+      <a href="#services">Services</a>
+      <a href="#prices">Prices</a>
+      <a href="#faq">FAQ</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <a class="top-phone" href="tel:07564046756">07564 046756</a>
+  </div>
+</header>
+
+<main>
+  <div class="hero">
+    <div class="wrap">
+      <div>
+        <h1>Home IT support in Dudley</h1>
+        <p>Wi‑Fi, computers, phones, printers and PC upgrades, sorted in your home. Fixed prices, clear explanations, and no charge if the problem can't be fixed.</p>
+        <div class="actions">
+          <a class="btn btn-primary" href="tel:07564046756">Call 07564 046756</a>
+          <a class="btn btn-secondary" href="https://wa.me/447564046756">Message on WhatsApp</a>
+        </div>
+      </div>
+      <dl class="facts">
+        <div><dt>Call‑out fee</dt><dd>None</dd></div>
+        <div><dt>Home visits from</dt><dd>£30</dd></div>
+        <div><dt>Visits</dt><dd>Weekdays 4–8pm, and weekends</dd></div>
+        <div><dt>Payment</dt><dd>Cash or bank transfer</dd></div>
+        <div><dt>Area</dt><dd>Dudley borough</dd></div>
+      </dl>
+    </div>
+  </div>
+
+  <section id="services">
+    <div class="wrap">
+      <h2>Services</h2>
+      <p class="intro">Help for homes across Dudley, Stourbridge, Halesowen, Brierley Hill, Kingswinford and Sedgley.</p>
+      <div class="services">
+        <div class="service"><h3>Wi‑Fi and internet</h3><p>Dropouts, weak signal in parts of the house, and new routers or mesh systems set up properly.</p></div>
+        <div class="service"><h3>Laptops and computers</h3><p>Slow performance, pop‑ups and failed updates fixed. New computers set up with your files moved across.</p></div>
+        <div class="service"><h3>Phones and tablets</h3><p>Setup, moving photos and contacts, and getting WhatsApp and video calls working.</p></div>
+        <div class="service"><h3>Printers and smart TVs</h3><p>Connected to your network and working reliably.</p></div>
+        <div class="service"><h3>PC upgrades and builds</h3><p>SSD and memory upgrades, cleaning and maintenance, and custom PCs built from your chosen parts.</p></div>
+        <div class="service"><h3>Online safety</h3><p>Checking for scams, setting up backups and improving passwords.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="prices" class="alt">
+    <div class="wrap">
+      <h2>Prices</h2>
+      <p class="intro">You'll have a price before any work starts. Parts and equipment are only bought with your agreement.</p>
+      <div class="price-cols">
+        <div>
+          <h3>Home support</h3>
+          <table>
+            <tr><td>Home visit, first hour</td><td>£30</td></tr>
+            <tr><td>Each additional half hour</td><td>£15</td></tr>
+            <tr><td>Wi‑Fi setup<small>Coverage check and router or mesh installation</small></td><td>£40</td></tr>
+            <tr><td>New device setup<small>Phone, tablet or laptop, including data transfer</small></td><td>£35</td></tr>
+            <tr><td>One‑to‑one tuition, per hour</td><td>£25</td></tr>
+          </table>
+        </div>
+        <div>
+          <h3>PC upgrades and builds</h3>
+          <table>
+            <tr><td>SSD or memory upgrade<small>Fitted and data migrated. Parts extra</small></td><td>£35</td></tr>
+            <tr><td>Clean and maintenance<small>Dust removal, thermal paste, driver updates</small></td><td>£35</td></tr>
+            <tr><td>Custom PC build<small>Assembly, Windows installation and stress testing</small></td><td>£80</td></tr>
+            <tr><td>Parts list for your budget</td><td>Included with a build</td></tr>
+          </table>
+        </div>
+      </div>
+      <div class="terms"><p>No call‑out fee. If I can't fix the problem, there's nothing to pay for my time.</p></div>
+    </div>
+  </section>
+
+  <section id="process">
+    <div class="wrap">
+      <h2>How it works</h2>
+      <p class="intro">Payment is only due once the work is done.</p>
+      <ol class="steps">
+        <li><h3>Get in touch</h3><p>Call or message with a short description of the problem.</p></li>
+        <li><h3>Get a price</h3><p>I'll give you an estimate and book a time that suits you.</p></li>
+        <li><h3>Work completed</h3><p>I fix the problem and walk you through what was done.</p></li>
+        <li><h3>Pay on completion</h3><p>By cash or bank transfer, once you're happy.</p></li>
+      </ol>
+    </div>
+  </section>
+
+  <section id="about" class="alt">
+    <div class="wrap about">
+      <h2>About</h2>
+      <p>I'm Lewis, an independent technician based in Dudley. I build and maintain my own networks and PCs, and I bring the same care to the equipment in your home.</p>
+      <p>I don't sell hardware, so any advice about what to buy is independent. If a job needs a specialist, I'll tell you.</p>
+    </div>
+  </section>
+
+  <section id="faq">
+    <div class="wrap faq">
+      <h2>Frequently asked questions</h2>
+      <details><summary>Can I book on behalf of a relative?</summary><p>Yes. You can arrange and pay for the visit, and I'll send you a summary of the work afterwards.</p></details>
+      <details><summary>Can you build a gaming PC?</summary><p>Yes. Share your budget and what you'll use it for, and I'll recommend a parts list. You buy the parts in your name so the warranties are yours, and I assemble, set up and test the system.</p></details>
+      <details><summary>What happens if a PC part is faulty?</summary><p>Every build is tested before handover. If a component is faulty, I'll identify it and help you return it under the manufacturer's warranty.</p></details>
+      <details><summary>Can you recover lost files?</summary><p>Often, yes, if the drive still works. Data on a failed drive needs a specialist recovery service, and I'll tell you if that's the case.</p></details>
+      <details><summary>Do you support businesses?</summary><p>I work with homes only. Businesses are better served by a dedicated IT support company.</p></details>
+    </div>
+  </section>
+
+  <section id="contact" class="alt">
+    <div class="wrap contact">
+      <div>
+        <h2>Contact</h2>
+        <p class="intro">Call, text or WhatsApp with a brief description of the problem. If I'm with a customer, I'll reply the same day.</p>
+        <div class="actions">
+          <a class="btn btn-primary" href="tel:07564046756">Call now</a>
+          <a class="btn btn-secondary" href="https://wa.me/447564046756">WhatsApp</a>
+        </div>
+      </div>
+      <dl class="contact-list">
+        <div><dt>Phone</dt><dd><a href="tel:07564046756">07564 046756</a></dd></div>
+        <div><dt>Visits</dt><dd>Weekdays 4–8pm, and weekends</dd></div>
+        <div><dt>Email</dt><dd><a href="mailto:lewisstechhelp@gmail.com">lewisstechhelp@gmail.com</a></dd></div>
+        <div><dt>Area</dt><dd>Dudley, West Midlands</dd></div>
+      </dl>
+    </div>
+  </section>
+</main>
+
+<footer><div class="wrap">Lewis's Tech Help, Dudley, West Midlands</div></footer>
+</body>
+</html>
